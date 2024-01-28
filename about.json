@@ -1,9 +1,7 @@
 {
-  "about_url": "TODO: Put your theme's public repo or Meta topic URL here",
-  "license_url": "TODO: Put your theme's LICENSE URL here",
-  "assets": {
-  },
+  "about_url": "https://github.com/JM-M/network-society-theme",
+  "license_url": "https://github.com/JM-M/network-society-theme/blob/main/LICENSE",
+  "assets": {},
   "name": "Network Society Forum",
-  "color_schemes": {
-  }
+  "color_schemes": {}
 }
