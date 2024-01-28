@@ -1,0 +1,203 @@
+:root {
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --primary-low: #e9e9e9;
+}
+
+// Border-radius values
+$border-radius-values: (
+  "none": 0,
+  "sm": 0.125rem,
+  "md": 0.25rem,
+  "lg": 0.5rem,
+  "xl": 1rem,
+  "2xl": 2rem,
+  "full": 9999px,
+  // You can use a large value for a full circle
+);
+
+// Border-radius mixin
+@mixin border-radius($radius) {
+  @if map-has-key($border-radius-values, $radius) {
+    border-radius: map-get($border-radius-values, $radius) !important;
+  } @else {
+    @warn "Invalid border-radius value: #{$radius}. Using 'none' as default.";
+    border-radius: map-get($border-radius-values, "none") !important;
+  }
+}
+
+// Font size variables
+$font-sizes: (
+  "xs": 0.75rem,
+  "sm": 0.875rem,
+  "base": 1rem,
+  "lg": 1.125rem,
+  "xl": 1.25rem,
+  "2xl": 1.5rem,
+  "3xl": 1.875rem,
+  "4xl": 2.25rem,
+  "5xl": 3rem,
+  "6xl": 4rem,
+);
+
+// Font size mixin
+@mixin font-size($size) {
+  font-size: map-get($font-sizes, $size);
+}
+
+// for consistent sizing across form fields
+input,
+button,
+textarea,
+select,
+summary.select-kit-header {
+  @include border-radius("lg");
+  * {
+    font-family: inherit;
+  }
+}
+
+.navigation-controls {
+  details.select-kit {
+    summary.select-kit-header {
+      padding: 0.4em 0.5em;
+    }
+  }
+}
+
+.Header-rightHeaderItems > div:not(.UsersAccountMenu-root):first-child {
+  display: none;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+// Nav
+.nav-pills:not(.action-list) {
+  > li {
+    > a,
+    button {
+      @include font-size("sm");
+      @include border-radius("lg");
+
+      // &:hover { // Find a way to solve this
+      //   color: var(--quaternary-high);
+      // }
+    }
+  }
+}
+
+// Buttons
+.btn {
+  @include font-size("sm");
+}
+
+// Header
+.d-header {
+  box-shadow: none;
+  border-width: 0 0 1px 0;
+  border-color: #e1e1e1;
+  border-style: solid;
+
+  #site-text-logo {
+    @include font-size("2xl");
+    font-weight: 400;
+    font-family: inherit;
+  }
+}
+
+// Sidebar
+.sidebar-wrapper {
+  .sidebar-container {
+    border-right: none;
+  }
+}
+
+.sidebar-more-section-links-details-content {
+  @include border-radius("lg");
+}
+
+// Sidebar Section
+// Excluding community links (The first group of links)
+.sidebar-section-wrapper:not([data-section-name="community"]) {
+  .sidebar-section-content {
+    padding-left: 0.875em;
+  }
+}
+
+// Sidebar Section Links
+.sidebar-section-link-wrapper {
+  .sidebar-section-link {
+    @include font-size("sm");
+
+    &:focus,
+    // &:hover,
+    &.active {
+      color: var(--d-sidebar-highlight-color);
+      background: inherit;
+      color: var(--primary);
+    }
+  }
+}
+
+.search-menu,
+.search-menu-container {
+  .menu-panel,
+  .search-input {
+    @include border-radius("lg");
+  }
+
+  .menu-panel {
+    border: 1px solid var(--primary-low);
+  }
+}
+
+.search-container {
+  .search-header {
+    @include border-radius("xl");
+  }
+}
+
+div.title-wrapper {
+  font-family: inherit;
+  h1 {
+    font-family: inherit;
+    a.fancy-title {
+      font-family: inherit;
+      font-weight: 500;
+    }
+  }
+}
+
+.more-topics__container {
+  h3 {
+    font-weight: 500;
+    font-family: inherit;
+  }
+}
+
+.lightbox,
+.topic-map,
+.map,
+.fk-d-tooltip {
+  @include border-radius("xl");
+  overflow: hidden;
+}
+
+.fk-d-menu__inner-content {
+  @include border-radius("xl");
+}
+
+.map {
+  .widget-button {
+    @include border-radius("none");
+  }
+}
+
+.footer-message {
+  h3 {
+    @include font-size("sm");
+    font-weight: 500;
+    font-family: inherit;
+  }
+}
