@@ -1,7 +1,29 @@
-{
+{ 
+  "name": "Network Society Forum",
   "about_url": "https://github.com/JM-M/network-society-theme",
   "license_url": "https://github.com/JM-M/network-society-theme/blob/main/LICENSE",
+  "component": false,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
   "assets": {},
-  "name": "Network Society Forum",
-  "color_schemes": {}
+  "color_schemes": {
+    "Light": {
+      "primary": "222222",
+      "secondary": "ffffff",
+      "tertiary": "3046d1",
+      "quaternary": "222222",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "e6be2b",
+      "selected": "999999",
+      "hover": "badff2",
+      "danger": "c80001",
+      "success": "009942",
+      "love": "3046d1"
+    }
+  },
+  "modifiers": {},
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
 }
