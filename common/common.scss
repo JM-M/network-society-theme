@@ -31,6 +31,12 @@ body {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: var(--secondary);
+  }
+}
+
 // Hide search error
 .Header-rightHeaderItems > div:not(.UsersAccountMenu-root):first-child {
   display: none;
