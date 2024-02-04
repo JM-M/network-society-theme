@@ -17,6 +17,18 @@
 body {
   font-family: var(--default-font);
   background-color: var(--body-bg);
+  &::-webkit-scrollbar {
+    width: 0.6em;
+    &:hover {
+      width: 1em;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--body-bg);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--tertiary-200);
+  }
 }
 
 // Hide search error
@@ -37,6 +49,8 @@ body {
 .btn {
   background: var(--secondary);
   color: var(--primary-high);
+  font-size: var(--font-down-1);
+  font-weight: 500;
 }
 .discourse-no-touch .btn:active {
   scale: 0.95;
@@ -495,8 +509,18 @@ body.has-full-page-chat .alert-info {
 }
 
 .topic-list thead tr {
-  background-color: var(--body-bg);
   border: 0;
+  th {
+    background-color: var(--body-bg);
+    &:first-child {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    &:last-child {
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
 }
 
 .topic-list tbody {
@@ -560,11 +584,27 @@ body.has-full-page-chat .alert-info {
   );
 }
 
+.more-topics__list h3,
+h3.more-topics__browse-more {
+  font-family: var(--default-font);
+  font-size: var(--font-up-1);
+}
+
+input,
+button,
+textarea,
+select,
+summary.select-kit-header {
+  font-size: var(--font-down-1);
+}
+
 // post page
 body.category {
   #main-outlet {
     background-color: #ffffff;
     padding: 20px;
+    margin: 24px 0;
+    border-radius: 0.5rem;
   }
 
   .fancy-title {
