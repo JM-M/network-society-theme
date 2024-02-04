@@ -1,4 +1,6 @@
 :root {
+  --body-bg: #f5f5f5;
+  --default-font: "Ubuntu", sans-serif;
   --btn-default-border: var(--primary-300);
   --btn-default-hover: var(--tertiary-800);
   --d-button-border-radius: 6px;
@@ -13,7 +15,8 @@
 }
 
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: var(--default-font);
+  background-color: var(--body-bg);
 }
 
 // Hide search error
@@ -328,24 +331,26 @@ input:hover,
 /* Navigation */
 
 .nav-pills {
-  box-shadow: 0 3px 0 var(--primary-50);
+  margin-left: auto !important;
+}
+.nav-pills > li {
+  margin-right: 3px;
 }
 .nav-pills > li a,
 .nav-pills > li button {
   transition: all 0.3s;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  border-radius: 6px;
 }
 .nav-pills > li a.active,
 .nav-pills > li button.active {
   color: var(--quaternary);
-  background-color: transparent;
-  box-shadow: 0 3px 0 var(--quaternary);
+  background-color: var(--quaternary-low);
 }
 .nav-pills > li > a:not(.active):hover,
 .nav-pills > li button:not(.active):hover {
   color: var(--primary);
-  background-color: transparent;
-  box-shadow: 0 3px 0 var(--quaternary);
+  background-color: var(--quaternary-low);
 }
 .admin-controls,
 .admin-controls nav {
@@ -475,6 +480,99 @@ body.has-full-page-chat .alert-info {
     color: var(--secondary) !important;
   }
 }
+
+// my css starts here
+.navigation-container {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: var(--nav-space);
+  padding-bottom: 0;
+  width: unset;
+}
+
+.topic-list {
+  border-radius: 0.5rem;
+}
+
+.topic-list thead tr {
+  background-color: var(--body-bg);
+  border: 0;
+}
+
+.topic-list tbody {
+  border: none;
+}
+
+.topic-list-item {
+  background-color: #ffffff;
+  &:last-child:not(:hover) {
+    border-bottom: 0;
+    td {
+      background-color: #ffffff;
+      &:first-child {
+        border-bottom-left-radius: 0.5rem;
+      }
+      &:last-child {
+        border-bottom-right-radius: 0.5rem;
+      }
+    }
+  }
+  &:first-child {
+    border-top: 0;
+    td {
+      background-color: #ffffff;
+      &:first-child {
+        border-top-left-radius: 0.5rem;
+      }
+      &:last-child {
+        border-top-right-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+.topic-list-item td:first-child,
+.topic-post {
+  border-left: none;
+}
+
+.title.raw-link.raw-topic-link {
+  font-size: var(--font-down-1);
+  &:hover {
+    color: var(--tertiary-high) !important;
+  }
+}
+
+.footer-message h3 {
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.sidebar-footer-wrapper {
+  background-color: var(--body-bg);
+}
+
+.sidebar-footer-wrapper .sidebar-footer-container:before {
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--body-bg), 0),
+    rgba(var(--body-bg), 1)
+  );
+}
+
+// post page
+body.category {
+  #main-outlet {
+    background-color: #ffffff;
+    padding: 20px;
+  }
+
+  .fancy-title {
+    font-family: var(--default-font);
+  }
+}
+
+// my css ends here
 
 .desktop-view.has-full-page-chat:not(.discourse-sidebar) #main-outlet {
   margin-left: 10px;
@@ -680,7 +778,7 @@ nav.post-controls .actions > button.reply:last-child:hover * {
 .d-header {
   box-shadow: none;
   border-width: 0 0 1px 0;
-  border-color: #e1e1e1;
+  border-color: var(--btn-default-border);
   border-style: solid;
 }
 .d-header #site-text-logo {
@@ -694,7 +792,7 @@ nav.post-controls .actions > button.reply:last-child:hover * {
 /*   Sidebar   */
 
 .sidebar-wrapper {
-  background-color: var(--secondary);
+  background-color: transparent;
 }
 
 .has-sidebar-page .sidebar-wrapper {
@@ -714,6 +812,28 @@ nav.post-controls .actions > button.reply:last-child:hover * {
   }
 }
 
+summary.select-kit-header,
+.sidebar-more-section-links-details-content {
+  border-radius: 0.5rem;
+}
+
+.lightbox,
+.topic-map,
+.map,
+.fk-d-tooltip {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.fk-d-menu__inner-content {
+  border-radius: 1rem;
+}
+
+.sidebar-section-wrapper
+  .sidebar-section-header.sidebar-section-header-collapsable,
+.sidebar-more-section-links-details-summary {
+  background: inherit;
+}
 .sidebar-more-section-links-details-summary,
 .sidebar-more-section-links-details,
 .sidebar-section-link-wrapper .sidebar-section-link {
@@ -722,11 +842,12 @@ nav.post-controls .actions > button.reply:last-child:hover * {
   border-radius: 6px;
 }
 .sidebar-section-link-wrapper .sidebar-section-link.active {
-  background: var(--tertiary-100);
+  // background: var(--tertiary-100);
   color: var(--tertiary-hover);
 }
 .sidebar-section-link-wrapper .sidebar-section-link:hover {
-  background: var(--tertiary-100);
+  background: none;
+  color: var(--tertiary-hover);
 }
 .sidebar-section-link-wrapper .sidebar-section-link.active .d-icon {
   color: var(--tertiary-hover);
@@ -1060,20 +1181,38 @@ div.edit-category .edit-category-nav .nav-stacked,
 }
 
 .sidebar-footer-wrapper .sidebar-footer-container {
-  background: var(--secondary);
+  // background: var(--secondary);
   border: none;
+}
+.has-sidebar-page .sidebar-wrapper,
+.sidebar-wrapper .sidebar-container {
+  border-right: none;
 }
 .sidebar-wrapper .sidebar-sections {
   --scrollbarThumbBg: var(--tertiary-200);
+  --scrollbarTrackBg: transparent;
+  scrollbar-width: thin;
 }
 
-.sidebar-footer-wrapper .sidebar-footer-container:before {
-  background: linear-gradient(
-    to bottom,
-    rgba(var(--secondary-rgb), 0),
-    rgba(var(--secondary-rgb), 1)
-  );
-}
+// .sidebar-sections::-webkit-scrollbar {
+//   background: var(--accents-1) !important;
+//   border-radius: 4px !important;
+//   height: 8px !important;
+//   width: 8px !important;
+// }
+
+// .sidebar-sections::-webkit-scrollbar-thumb {
+//   background: var(--accents-2) !important;
+//   border-radius: 4px !important;
+// }
+
+// .sidebar-footer-wrapper .sidebar-footer-container:before {
+//   background: linear-gradient(
+//     to bottom,
+//     rgba(var(--secondary-rgb), 0),
+//     rgba(var(--secondary-rgb), 1)
+//   );
+// }
 
 .btn.btn-danger.btn-icon:not(:hover) {
   background: var(--secondary);
