@@ -496,7 +496,7 @@ body.has-full-page-chat .alert-info {
 
 // my css starts here
 .navigation-container {
-  background-color: #ffffff;
+  background-color: var(--secondary);
   border-radius: 0.5rem;
   padding: var(--nav-space);
   padding-bottom: 0;
@@ -527,11 +527,11 @@ body.has-full-page-chat .alert-info {
 }
 
 .topic-list-item {
-  background-color: #ffffff;
+  background-color: var(--secondary);
   &:last-child:not(:hover) {
     border-bottom: 0;
     td {
-      background-color: #ffffff;
+      background-color: var(--secondary);
       &:first-child {
         border-bottom-left-radius: 0.5rem;
       }
@@ -543,7 +543,7 @@ body.has-full-page-chat .alert-info {
   &:first-child {
     border-top: 0;
     td {
-      background-color: #ffffff;
+      background-color: var(--secondary);
       &:first-child {
         border-top-left-radius: 0.5rem;
       }
@@ -600,7 +600,7 @@ summary.select-kit-header {
 // post page
 body.category {
   #main-outlet {
-    background-color: #ffffff;
+    background-color: var(--secondary);
     padding: 20px;
     margin: 24px 0;
     border-radius: 0.5rem;
