@@ -26,7 +26,7 @@ body {
     background-color: var(--primary-very-low);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #c1c1c1;
+    background-color: var(--primary-low);
   }
 }
 
@@ -1228,7 +1228,7 @@ div.edit-category .edit-category-nav .nav-stacked,
   border-right: none;
 }
 .sidebar-wrapper .sidebar-sections {
-  --scrollbarThumbBg: #c1c1c1;
+  --scrollbarThumbBg: var(--primary-low);
   --scrollbarTrackBg: transparent;
   scrollbar-width: thin;
 }
