@@ -27,7 +27,7 @@ body {
     background-color: var(--body-bg);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--tertiary-200);
+    background-color: #c1c1c1;
   }
 }
 
@@ -1229,7 +1229,7 @@ div.edit-category .edit-category-nav .nav-stacked,
   border-right: none;
 }
 .sidebar-wrapper .sidebar-sections {
-  --scrollbarThumbBg: var(--tertiary-200);
+  --scrollbarThumbBg: #c1c1c1;
   --scrollbarTrackBg: transparent;
   scrollbar-width: thin;
 }
