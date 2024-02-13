@@ -336,6 +336,20 @@ input:hover,
   border: none !important;
 }
 
+.composer-controls .toggle-fullscreen,
+.composer .submit-panel a.cancel {
+  display: none;
+}
+
+.d-editor-textarea-column {
+  max-width: 715px;
+  margin: 0 auto;
+}
+
+.d-editor-preview-wrapper {
+  display: none;
+}
+
 .search-menu .search-input {
   border: 1px solid var(--primary-300);
   border-radius: var(--d-input-border-radius);
