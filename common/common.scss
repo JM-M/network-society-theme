@@ -1,5 +1,5 @@
 :root {
-  --default-font: "Ubuntu", sans-serif;
+  --default-font: "Nunito", sans-serif;
   --btn-default-border: var(--primary-300);
   --btn-default-hover: var(--tertiary-800);
   --d-button-border-radius: 6px;
@@ -15,6 +15,7 @@
 
 body {
   font-family: var(--default-font);
+  font-optical-sizing: auto;
   background-color: var(--primary-very-low);
   &::-webkit-scrollbar {
     width: 0.6em;
@@ -567,9 +568,68 @@ body.has-full-page-chat .alert-info {
   }
 }
 
+.topic-post {
+  &:not(.topic-owner) {
+    border-radius: 0.5em;
+    border: 1px solid var(--primary-low);
+    margin-bottom: 20px;
+  }
+
+  .post-avatar img.avatar {
+    height: 34px;
+    width: 34px;
+    margin-left: 8px;
+  }
+}
+
+.who-liked .list-description {
+  padding-right: 10px;
+  font-size: var(--font-down-1);
+}
+
+.topic-map {
+  .map .number {
+    font-size: var(--font-0);
+  }
+  ul {
+    // li.created-at,
+    // li.last-reply a {
+    //   display: flex;
+    //   flex-direction: column-reverse;
+    //   justify-content: start;
+    //   align-items: center;
+    // }
+
+    li.avatars,
+    li.created-at img,
+    li.last-reply img {
+      display: none;
+    }
+
+    .topic-map-post.created-at,
+    .topic-map-post.last-reply {
+      font-size: var(--font-down-1);
+    }
+  }
+}
+
+.topic-post {
+  .topic-avatar,
+  .topic-body {
+    border-top: 0;
+  }
+}
+
 .topic-list-item td:first-child,
 .topic-post {
   border-left: none;
+}
+
+.small-action {
+  .topic-avatar,
+  .small-action-desc {
+    border-top: 0;
+  }
 }
 
 .title.raw-link.raw-topic-link {
