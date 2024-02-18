@@ -609,6 +609,8 @@ body.has-full-page-chat .alert-info {
     .topic-map-post.created-at,
     .topic-map-post.last-reply {
       font-size: var(--font-down-1);
+      display: block;
+      text-align: center;
     }
   }
 }
